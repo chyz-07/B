@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣之美</title>
+    <style>
+        /* 通用 */
+        .picture-container{
+            width: 90%;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .pictures{
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .picture{
+            flex: 0 0 100%;
+        }
+
+        .picture img{
+            width: 100%;
+            height: auto;
+        }
+
+        .name{
+            font-weight: bold;
+            font-size: large;
+            display: inline;
+        }
+
+        /* 桌機 */
+        @media only screen and (min-width: 1025px) {
+            header{
+                background-color: #47ec47;
+                display: flex; /* 使用 Flexbox 布局 */
+                justify-content: space-between; /* 在主轴上两端对齐 */
+                align-items: center; /* 交叉轴居中对齐 */
+            }
+            
+            header h1{
+                flex: 1;    /* 让 h1 元素占据剩余空间 */
+                text-align: center;
+            }
+
+            header #menu{
+                background-color: #8bf78b;
+                padding: 10px;
+                margin-right: 30px;
+            }
+            header #menu a{
+                text-decoration: none;
+                color: black;
+                margin-right: 10px;
+            }
+
+            .card{
+                display: flex;
+                justify-content: space-between; /* 在主轴上两端对齐 */
+                align-items: center; /* 使子元素在交叉轴上居中对齐 */
+                margin-bottom: 20px;
+            }
+
+            #featured{
+                margin-left: 70px;
+                margin-bottom: 20px;
+                /* flex: 1; 如果你不需要 #featured 占据剩余空间，可以取消这行 */
+            }
+
+            #suggest {
+                margin-right: 70px;
+                margin-bottom: 20px;
+            }
+
+            .featured-picture{
+                border: 1px solid black;
+                border-radius: 5px;
+                margin-left: 70px;
+                padding: 10px;
+                width: 500px;
+            }
+
+            .featured-picture img, .suggest-picture img{
+                width: 100%;
+                height: auto;
+            }
+
+            .suggest-picture{
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            footer{
+                background-color: #47ec47;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>台灣之美</h1>
+        <div id="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+    <div class="card">
+        <div id="featured" class="name">精選照片</div>
+        <div id="suggest" class="name">建議景點</div>
+    </div>
+    <div id="featured-picture" class="featured-picture">
+        <img src="P54011.jpg" alt="圖片1">
+        <img src="P54013.jpg" alt="圖片2">
+    </div>
+    <div id="suggest-picture" class="suggest-picture">
+        <div id="suggest-card1" class="suggest-card">
+            <img src="P54021.jpg">
+            <img src="P54022.jpg">
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 台灣之美
+    </footer>
+</body>
+</html>

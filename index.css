@@ -1,0 +1,341 @@
+.picture-container{
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.pictures{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.picture{
+    flex: 0 0 100%;
+}
+
+.picture img{
+    width: 100%;
+    height: auto;
+}
+
+.name{
+    font-weight: bold;
+    font-size: x-large;
+    display: inline;
+}
+
+footer{
+    background-color: #47ec47;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+/* 桌機 */
+@media only screen and (min-width: 1025px) {
+    header{
+        background-color: #47ec47;
+        display: flex; /* 使用 Flexbox 布局 */
+        justify-content: space-between; /* 在主轴上两端对齐 */
+        align-items: center; /* 交叉轴居中对齐 */
+        width: 100%;
+    }
+    
+    header h1{
+        flex: 1;    /* 让 h1 元素占据剩余空间 */
+        text-align: center;
+    }
+
+    header #menu{
+        background-color: #8bf78b;
+        padding: 10px;
+        margin-right: 30px;
+    }
+    header #menu a{
+        text-decoration: none;
+        color: black;
+        margin-right: 10px;
+    }
+
+    header #menu a:hover{
+        color: white;
+    }
+
+    .card{
+        margin-left: 90px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #featured-container {
+        display: flex;
+        flex-direction: column;
+        width: 520px;
+        margin-right: 20px;
+    }
+
+    #featured-picture{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    #featured-picture img{
+        width: 100%;
+    }
+
+    #pic1{
+        margin-bottom: 10px;
+    }
+    
+    #suggest-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .suggest-card {
+        display: flex;
+        flex-direction: row; /* 將元素水平排列 */
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 0 0 10px;
+    }
+    
+    .card-picture {
+        flex: 0 0 auto; /* 不伸縮，保持原始寬度 */
+        margin-right: 20px; /* 調整圖片和文字間的間距 */
+    }
+
+    .card-picture img{
+        width: 480px;
+    }
+
+    .card-text {
+        flex: 1 1 auto; /* 可伸縮，填滿剩餘空間 */
+        max-width: 500px;
+    }
+}
+
+/* 平板 */
+@media only screen and (min-width: 481px) and (max-width: 1024px){
+    header{
+        background-color: #47ec47;
+        display: flex; /* 使用 Flexbox 布局 */
+        justify-content: space-between; /* 在主轴上两端对齐 */
+        align-items: center; /* 交叉轴居中对齐 */
+        width: 100%;
+    }
+    
+    header h1{
+        flex: 1;    /* 让 h1 元素占据剩余空间 */
+        text-align: center;
+    }
+
+    #menu{
+        float: right;
+        margin-right: 10px;
+    }
+    
+    #icon{
+        width: 30px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        margin: 4px 0;
+        transition: transform 0.3 ease;
+    }
+    
+    #icon.open .line:nth-child(1){
+        transform: translateY(6px) rotate(45deg);
+    }
+    
+    #icon.open .line:nth-child(2){
+        opacity: 0;
+    }
+    
+    #icon.open .line:nth-child(3){
+        transform: translateY(-6px) rotate(-45deg);
+    }
+    
+    #menuItem{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px;
+        z-index: 1;
+    }
+    
+    #menuItem.show{
+        display: block;
+    }
+    
+    #menuItem a{
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s ease;
+    }
+    
+    #menuItem a:hover{
+        background-color: #ddd;
+    }
+
+    #featured-container{
+        margin-left: 40px;
+    }
+
+    #featured-picture{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 20px 0;
+        width: 655px;
+    }
+
+    #featured-picture img{
+        width: 320px;
+        padding: 0 10px 0 0;
+    }
+
+    #suggest-container{
+        margin-left: 40px;
+    }
+
+    .card-picture img{
+        width: 320px;
+    }
+
+    .suggest-card{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 20px 0;
+        width: 655px;
+    }
+
+    .card-picture{
+        flex: 0 0 auto;
+        margin-right: 20px;
+    }
+
+    .card-text{
+        flex: 1 1 auto;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    header{
+        background-color: #47ec47;
+        display: flex; /* 使用 Flexbox 布局 */
+        justify-content: space-between; /* 在主轴上两端对齐 */
+        align-items: center; /* 交叉轴居中对齐 */
+        width: 100%;
+    }
+    
+    header h1{
+        flex: 1;    /* 让 h1 元素占据剩余空间 */
+        text-align: center;
+    }
+
+    #menu{
+        float: right;
+        margin-right: 10px;
+    }
+    
+    #icon{
+        width: 30px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        margin: 4px 0;
+        transition: transform 0.3 ease;
+    }
+    
+    #icon.open .line:nth-child(1){
+        transform: translateY(6px) rotate(45deg);
+    }
+    
+    #icon.open .line:nth-child(2){
+        opacity: 0;
+    }
+    
+    #icon.open .line:nth-child(3){
+        transform: translateY(-6px) rotate(-45deg);
+    }
+    
+    #menuItem{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px;
+        z-index: 1;
+    }
+    
+    #menuItem.show{
+        display: block;
+    }
+    
+    #menuItem a{
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s ease;
+    }
+    
+    #menuItem a:hover{
+        background-color: #ddd;
+    }
+
+    #featured-picture{
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #featured-picture img{
+        width: 93%;
+        padding: 10px;
+    }
+
+    .suggest-card{
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .suggest-card img{
+        width: 93%;
+        padding: 10px;
+    }
+}
